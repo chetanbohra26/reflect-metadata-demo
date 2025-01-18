@@ -24,9 +24,6 @@ function Role(role: string, options?: Record<string, any>) {
     descriptor.value = function (...args: any[]) {
       console.log('args', args);
       console.log('Expected role', role, options);
-      // if (!checkRole(role)) {
-      //   throw new Error('Access denied');
-      // }
 
       return originalMethod.apply(this, args);
     }
